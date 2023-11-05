@@ -8,6 +8,10 @@ android {
     namespace = "com.example.generadorletrasmagicas"
     compileSdk = 34
 
+    viewBinding {
+        enable = true
+    }
+
     defaultConfig {
         applicationId = "com.example.generadorletrasmagicas"
         minSdk = 28

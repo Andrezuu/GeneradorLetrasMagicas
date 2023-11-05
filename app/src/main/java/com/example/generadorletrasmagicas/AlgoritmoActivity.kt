@@ -1,5 +1,7 @@
 package com.example.generadorletrasmagicas
 
-class AlgoritmoActivity {
+import androidx.appcompat.app.AppCompatActivity
+
+class AlgoritmoActivity:AppCompatActivity() {
 
 }

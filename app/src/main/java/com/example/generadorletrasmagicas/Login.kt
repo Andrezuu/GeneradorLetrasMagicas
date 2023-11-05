@@ -25,7 +25,7 @@ class Login : AppCompatActivity() {
         currentUser = auth.currentUser
 
         binding.run {
-            bt_iniciar_sesion.setOnClickListener {
+            btIniciarSesion.setOnClickListener {
                 val email = email.text.toString()
                 val password = password.text.toString()
                 if (validateData(email, password)) {

@@ -25,8 +25,8 @@ class SignUpActivity : AppCompatActivity() {
         currentUser = auth.currentUser
         binding.run{
             buttonContinuar.setOnClickListener{
-                val email = editTextEmail.text.toString()
-                val password = editTextPassword.text.toString()
+                val email = email.text.toString()
+                val password = password.text.toString()
                 if (validateData(email, password)){
                     createNewUser(email, password)
                     redirectActivity()
