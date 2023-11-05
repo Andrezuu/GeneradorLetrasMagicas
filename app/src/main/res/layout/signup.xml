@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:ignore="ExtraText">
+
+
+    <TextView
+        android:id="@+id/CrearCuenta"
+        android:layout_width="244dp"
+        android:layout_height="41dp"
+        android:text="Crear Cuenta"
+        android:textAlignment="center"
+        android:textColor="@color/blue"
+        android:textSize="40dp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="72dp"
+        tools:layout_editor_absoluteY="175dp" />
+
+    <EditText
+        android:id="@+id/editTextText"
+        android:layout_width="83dp"
+        android:layout_height="39dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Email"
+        android:textColor="@color/blue"
+        tools:layout_editor_absoluteX="49dp"
+        tools:layout_editor_absoluteY="234dp"
+        tools:ignore="MissingConstraints"/>
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="311dp"
+        android:layout_height="45dp"
+
+        android:background="@color/babyblue"
+        tools:layout_editor_absoluteX="49dp"
+        tools:layout_editor_absoluteY="285dp"
+        tools:ignore="MissingConstraints"/>
+
+    <EditText
+        android:id="@+id/editTextText2"
+        android:layout_width="98dp"
+        android:layout_height="42dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Password"
+        android:textColor="@color/blue"
+        tools:layout_editor_absoluteX="49dp"
+        tools:layout_editor_absoluteY="344dp"
+        tools:ignore="MissingConstraints" />
+
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="311dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="56dp"
+        android:background="@color/babyblue"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/email"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/email"
+        app:layout_constraintTop_toBottomOf="@+id/email" />
+
+    <Button
+        android:id="@+id/buttonContinuar"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/blue"
+        android:gravity="center"
+        android:text="Continuar"
+        tools:layout_editor_absoluteX="55dp"
+        tools:layout_editor_absoluteY="486dp"
+         />
+
+    <Button
+        android:id="@+id/buttonCancelar"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="@color/blue"
+        android:gravity="center"
+        android:text="Cancelar"
+        tools:layout_editor_absoluteX="55dp"
+        tools:layout_editor_absoluteY="550dp"
+        tools:ignore="MissingConstraints" />
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="201dp"
+        android:layout_height="135dp"
+        android:gravity="center"
+        app:srcCompat="@drawable/magic"
+        tools:layout_editor_absoluteX="105dp"
+        tools:layout_editor_absoluteY="20dp"
+        tools:ignore="MissingConstraints"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
