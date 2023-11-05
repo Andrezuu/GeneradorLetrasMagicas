@@ -3,6 +3,7 @@ package com.example.generadorletrasmagicas
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Patterns
 import android.widget.Toast
 import com.example.generadorletrasmagicas.databinding.SignupBinding
 import com.google.firebase.auth.FirebaseAuth
@@ -66,7 +67,7 @@ class SignUpActivity : AppCompatActivity() {
         if (email.isEmpty()) {
             valid = false
             showMessage("Ingresa un correo")
-        } else if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+        } else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             valid = false
             showMessage("Ingresa un correo válido")
         } else if (password.isEmpty()) {

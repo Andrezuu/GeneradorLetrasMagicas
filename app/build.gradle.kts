@@ -8,9 +8,16 @@ android {
     namespace = "com.example.generadorletrasmagicas"
     compileSdk = 34
 
-    viewBinding {
+    viewBinding{
         enable = true
     }
+    buildFeatures {
+        viewBinding = true
+    }
+    dataBinding{
+        enable = true
+    }
+
 
     defaultConfig {
         applicationId = "com.example.generadorletrasmagicas"
@@ -38,6 +45,9 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
+
+
 
 
 
