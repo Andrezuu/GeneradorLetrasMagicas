@@ -8,6 +8,8 @@ import android.widget.Toast
 import com.example.generadorletrasmagicas.databinding.SignupBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import android.content.Context
+import android.content.SharedPreferences
 
 class SignUpActivity : AppCompatActivity() {
     private lateinit var binding : SignupBinding
@@ -26,8 +28,8 @@ class SignUpActivity : AppCompatActivity() {
         currentUser = auth.currentUser
         binding.run{
             buttonContinuar.setOnClickListener{
-                val email = email.text.toString()
-                val password = password.text.toString()
+                val email = editTextEmail.text.toString()
+                val password = editTextPassword.text.toString()
                 if (validateData(email, password)){
                     createNewUser(email, password)
                     redirectActivity()
@@ -38,30 +40,6 @@ class SignUpActivity : AppCompatActivity() {
             }
         }
     }
-
-    private fun redirectActivity() {
-        val intentRedirect = Intent(this, Login::class.java)
-        startActivity(intentRedirect)
-        finish()
-    }
-
-    private fun createNewUser(email: String, password: String) {
-        auth.createUserWithEmailAndPassword(email, password)
-            .addOnCompleteListener(this) { task ->
-                if (task.isSuccessful) {
-                    showMessage("Nuevo usuario Creado")
-                } else {
-                    showMessage("Algo salió mal, intente nuevamente")
-                }
-            }
-
-    }
-
-    private fun showMessage(message: String) {
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
-
-    }
-
     private fun validateData(email: String, password: String): Boolean {
         var valid = true
         if (email.isEmpty()) {
@@ -79,4 +57,54 @@ class SignUpActivity : AppCompatActivity() {
         }
         return valid
     }
+
+    /*private fun createNewUser(email: String, password: String) {
+        auth.createUserWithEmailAndPassword(email, password)
+            .addOnCompleteListener(this) { task ->
+                if (task.isSuccessful) {
+                    //saveEmail(email)
+                    showMessage("Nuevo usuario Creado")
+                } else {
+                    showMessage("Algo salió mal, intente nuevamente")
+                }
+            }
+
+    }*/
+    private fun createNewUser(email: String, password: String) {
+        auth.createUserWithEmailAndPassword(email, password)
+            .addOnCompleteListener(this) { task ->
+                if (task.isSuccessful) {
+                    //saveEmail(email)
+                    showMessage("Nuevo usuario Creado")
+                } else {
+                    val error = task.exception
+                    if (error != null) {
+                        showMessage("Error: ${error.message}")
+                    } else {
+                        showMessage("Algo salió mal, intente nuevamente")
+                    }
+                }
+            }
+    }
+
+    private fun showMessage(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+
+    }
+
+    private fun redirectActivity() {
+        val intentRedirect = Intent(this, Login::class.java)
+        startActivity(intentRedirect)
+        finish()
+    }
+
+
+
+    /*private fun saveEmail(email: String) {
+        val sharedPreferences: SharedPreferences = getSharedPreferences("MyAppPreferences", Context.MODE_PRIVATE)
+        val editor: SharedPreferences.Editor = sharedPreferences.edit()
+        editor.putString("email", email)
+        editor.apply()
+    }*/
+
 }

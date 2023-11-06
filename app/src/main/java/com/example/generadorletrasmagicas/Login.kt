@@ -1,12 +1,16 @@
 package com.example.generadorletrasmagicas
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.generadorletrasmagicas.databinding.LoginBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+
+
 
 class Login : AppCompatActivity() {
     private lateinit var binding: LoginBinding
@@ -45,7 +49,7 @@ class Login : AppCompatActivity() {
         auth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener() { task ->
                 if (task.isSuccessful) {
-                    redirectActivity()
+                    redirectCreateActivity()
                 } else {
                     showMessage("Usuario o Contraseña incorrectos")
                 }
@@ -77,14 +81,8 @@ class Login : AppCompatActivity() {
     }
 
     private fun redirectCreateActivity() {
-        val intentRedirect = Intent(this, SignUpActivity::class.java)
+        val intentRedirect = Intent(this, AlgoritmoActivity::class.java)
         startActivity(intentRedirect)
     }
 
-    private fun redirectActivity() {
-        val intentRedirect = Intent(this, MainActivity::class.java)
-        startActivity(intentRedirect)
-//        quita el activity de la pila:
-        finish()
-    }
 }

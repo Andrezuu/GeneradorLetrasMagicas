@@ -24,8 +24,8 @@
         android:layout_centerHorizontal="true"/>
 
 
-    <EditText
-        android:id="@+id/editTextText"
+    <TextView
+        android:id="@+id/Emaill"
         android:layout_width="83dp"
         android:layout_height="39dp"
         android:layout_alignBottom="@id/imageView"
@@ -40,7 +40,7 @@
         tools:layout_editor_absoluteY="234dp" />
 
     <EditText
-        android:id="@+id/email"
+        android:id="@+id/editTextEmail"
         android:layout_width="337dp"
         android:layout_height="38dp"
         android:layout_alignBottom="@id/imageView"
@@ -50,8 +50,8 @@
         tools:layout_editor_absoluteX="89dp"
         tools:layout_editor_absoluteY="285dp" />
 
-    <EditText
-        android:id="@+id/editTextText2"
+    <TextView
+        android:id="@+id/Password"
         android:layout_width="98dp"
         android:layout_height="42dp"
         android:layout_alignParentBottom="true"
@@ -65,7 +65,7 @@
         android:layout_marginLeft="30dp"/>
 
     <EditText
-        android:id="@+id/password"
+        android:id="@+id/editTextPassword"
 
         android:layout_width="328dp"
         android:layout_height="wrap_content"
