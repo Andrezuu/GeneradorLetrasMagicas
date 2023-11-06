@@ -51,7 +51,7 @@ class AlgoritmoActivity : AppCompatActivity() {
 
         binding.generar.setOnClickListener {
             possibleWords.clear()
-            letters = binding.words.text.toString()
+            letters = binding.words.text.toString().filter { it in 'a'..'z' }
             dfs()
             iniciarWordsRecyclerView()
         }
